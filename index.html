@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>estate sales</title>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600,800" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <main>
+            <header class="inset">
+                <form class="form-search">
+                    <div class="search">
+                        <input type="search" class="big swiss" name="q" placeholder="Search by location or product&hellip;" value="">
+                        <button class="big btn" type="submit">Search</button>
+                    </div>
+                </form>
+            </header>
+            <section class="results">
+            </section>
+        </main>
+        <script type="text/template" id="template-listing">
+            <article data-id="<%= data.id %>">
+                <div class="info inset c">
+                    <a href="#" class="close">&times;</a>
+                    <div class="name">
+                        <h2 class="swiss"><%= data.name %></h2>
+                        <!--<span class="badge open">Open Now</span>-->
+                        <!--<span class="badge closed">Closed</span>-->
+                        <ul class="hours">
+                            <% _.each(data.dates, function(v, k) { %>
+                                <li><b><%= k %></b> <span class="starts"><%= v.starts %></span> &ndash; <span class="ends"><%= v.ends %></span></li>
+                            <% }) %>
+                        </ul>
+                    </div>
+                    <div class="location">
+                        <% if (data.address.address) { %>
+                            <address>
+                                <%= data.address.address %><br>
+                                <%= data.address.city %>, <%= data.address.state %> <%= data.address.zip %>
+                            </address>
+                        <% } %>
+
+                        <% if (data.organisation.telephone) { %>
+                            <% tel = getDigits(data.organisation.telephone) %>
+                            <tel><a href="tel:+1<%= tel %>"><%= tel.substr(0, 3) %> <%= tel.substr(3, 3) %> <%= tel.substr(6, 4) %></a></tel>
+                        <% } %>
+                        <!--<div class="distance"><b>0.0 mi</b> away</div>-->
+                    </div>
+                </div>
+                <ol class="photos">
+                    <% _.each(data.images.unsold, function(v) { %>
+                        <li><div class="photo photo-unsold" style="background-image: url(<%= url('image') + v %>)" title="Item for sale"></div></li>
+                    <% }) %>
+                    <% _.each(data.images.sold, function(v) { %>
+                        <li><div class="photo photo-sold" style="background-image: url(<%= url('image') + v %>)" title="Item sold"></div></li>
+                    <% }) %>
+                </ol>
+                <% if (data.description) { %>
+                    <details class="swiss prose inset">
+                        <summary>More information</summary>
+                        <%= data.description.replace(/<p>&nbsp;<\/p>/g, '') %>
+                    </details>
+                <% } %>
+            </article>
+        </script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.1.1/zepto.js"></script>
+        <script type="text/javascript" src="main.js"></script>
+    </body>
+</html>

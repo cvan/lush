@@ -1,0 +1,556 @@
+@font-face {
+    font-family: swis-bold-web;
+    src: url("fonts/swis-bol-webfont.eot");
+    src: url("fonts/swis-bol-webfont.eot?#iefix") format("embedded-opentype"),
+         url("fonts/swis-bol-webfont.woff") format("woff"),
+         url("fonts/swis-bol-webfont.ttf") format("truetype"),
+         url("fonts/swis-bol-webfont.svg#swis_boldbold") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i,
+center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section,
+summary, time, mark, audio, video {
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+caption, th, td {
+    font-weight: normal;
+    text-align: left;
+    vertical-align: middle;
+}
+
+q, blockquote {
+    quotes: none;
+}
+
+q:before, q:after,
+blockquote:before, blockquote:after {
+    content: "";
+    content: none;
+}
+
+a img {
+    border: none
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu,
+nav, section, summary {
+    display: block;
+}
+
+img {
+    width: 100%;
+}
+
+img::selection {
+    background: transparent;
+}
+
+img::-moz-selection {
+    background: transparent;
+}
+
+/*
+input, button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+*/
+
+/* >> The Magnificent CLEARFIX <<
+   Lifted from html5boilerplate.com
+   License is Public domain */
+.c:after { content: ""; display: block; height: 0; clear: both; visibility: hidden; }
+.c { display: inline-block; }
+* html .c { height: 1%; } /* Hides from IE-mac \*/
+.c { display: block; }
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+html, body {
+    background: #fff;
+    height: 100%;
+}
+
+body {
+    -webkit-tap-highlight-color: rgba(255,0,0,.6);
+    font: 14px cosmic-sans-neue-mono-web,"Open Sans", Helvetica, sans-serif;
+}
+
+b, strong {
+    font-weight: 600;
+}
+
+header {
+    background: purple;
+}
+
+.inset {
+    padding: 15px;
+}
+
+::-webkit-input-placeholder {
+    color: $gray;
+}
+
+:-moz-placeholder {
+    color: $gray;
+    text-overflow: ellipsis;  // Firefox 18 and below
+}
+
+::-moz-placeholder {
+    text-overflow: ellipsis;  // Firefox 19+
+}
+
+[placeholder] {
+    text-overflow: ellipsis;
+}
+[placeholder]:-moz-placeholder:focus {
+    color: transparent !important;
+}
+[placeholder]:focus::-moz-placeholder {
+    color: transparent !important;
+}
+[placeholder]:focus::-webkit-input-placeholder {
+    color: transparent !important;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="datetime"],
+input[type="number"],
+input[type="date"],
+input[type="url"],
+input[type="search"],
+textarea,
+.btn {
+    border-radius: 2px;
+    font-family: inherit;
+    border: 1px solid #eee;
+    margin: 0;
+    padding: 10px 5px;
+    background-color: white;
+    color: #333;
+    font-size: 13px;
+    border-radius: 1px;
+    box-shadow: 0 0 1px rgba(0,0,0,.2) inset;
+    transition: border .3s ease-in;
+}
+
+input.big,
+textarea.big {
+    font-size: 24px;
+}
+
+input[disabled], input[readonly],
+textarea[disabled], textarea[readonly] {
+    background: #eee;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+form:not([novalidate]) input.input-error,
+form:not([novalidate]) textarea.input-error,
+form:not([novalidate]) select.input-error,
+form:not([novalidate]) .input-error,
+form:not([novalidate]) input.focused:invalid,
+form:not([novalidate]) textarea.focused:invalid,
+form:not([novalidate]) select.focused:invalid {
+    border-color: #da3e5a;
+    box-shadow: 0 0 0 2px rgba(218,62,90,.3), 0 1px 2px rgba(0,0,0,.2) inset;
+}
+form:not([novalidate]) input.input-success,
+form:not([novalidate]) textarea.input-success,
+form:not([novalidate]) select.input-success,
+form:not([novalidate]) .input-success,
+form:not([novalidate]) input.focused:valid,
+form:not([novalidate]) textarea.focused:valid,
+form:not([novalidate]) select.focused:valid {
+    border-color: #18a011 ;
+    box-shadow: 0 0 0 2px rgba(24,160,17,.3), 0 1px 2px rgba(0,0,0,.2) inset;
+}
+
+.btn {
+    border: 1px solid #dadada;
+    border-bottom-color: #a9a9a9;
+    border-left: 1px solid #d2d2d2;
+    border-radius: 4px;
+    border-right: 1px solid #d2d2d2;
+    box-shadow: 0 1px 0 rgba(0,0,0,.15), inset 0 1px 1px 0 rgba(255,255,255,.6);
+    cursor: pointer;
+    display: inline-block;
+    outline: none;
+    padding: 10px 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #fff;
+}
+
+header form .search {
+    position: relative;
+    /*width: 80%;*/
+}
+
+input[type=search] {
+    height: 45px;
+    padding-right: 90px;
+    width: 100%;
+}
+
+input[type=search] ~ button {
+    background-color: #3e2d79;
+    border-radius: 0 2px 2px 0;
+    border: 0;
+    box-shadow: none;
+    color: #fff;
+    font-weight: 600;
+    height: 45px;
+    max-width: 90px;
+    position: absolute;
+    right: -1px;
+    text-shadow: none;
+    top: 0;
+}
+
+input[type=search] ~ button:hover {
+    background-color: #251460;
+}
+
+input[type=search] ~ button:active {
+    box-shadow: 0 2px 0 0 rgba(0,0,0,.2) inset, 0 12px 24px 6px rgba(0,0,0,.2) inset, 0 0 2px 2px rgba(0,0,0,.2) inset;
+    color: #aaa;
+    /*opacity: .6;*/
+}
+
+main {
+    padding-bottom: 1px;
+}
+
+article {
+    border-radius: 4px;
+    margin: 15px;
+}
+
+article .info {
+    border-radius: 4px 4px 0 0;
+}
+
+article .photos {
+    background: #ddd;
+    border-radius: 0 0 4px 4px;
+    /*box-shadow: 0 1px 1px rgba(0,0,0,.25), 0 1px 5px rgba(0,0,0,.05);*/
+    font-size: 0;
+    list-style: none;
+    overflow-y: auto;
+    padding-bottom: 1px;
+}
+
+article .photos-,
+.photo {
+    height: 200px;
+}
+
+.photo {
+    background: #fff center no-repeat;
+    background-size: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 1px 0 rgba(0,0,0,.4), 0 1px 0 1px rgba(0,0,0,.1);
+}
+
+.photos li {
+    display: inline-block;
+    padding: 5px;
+    vertical-align: top;
+    width: 25%;
+}
+
+.name {
+    float: left;
+}
+
+.location {
+    float: right;
+    min-width: 150px;
+}
+
+address {
+    color: #666;
+    font-size: 10px;
+}
+
+.swiss,
+input.swiss {
+    font-family: swis-bold-web, Helvetica, sans-serif;
+}
+
+h2 {
+    color: #e6509b;
+    font-size: 28px;
+    line-height: 30px;
+    margin-bottom: 15px;
+}
+
+.info {
+    background: #f1f1f1;
+}
+
+.badge {
+    background: #eee;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    color: #666;
+    font-size: 10px;
+    text-transform: uppercase;
+    padding: 4px 8px;
+}
+
+.badge.open {
+    background: green;
+    border-color: darkgreen;
+    color: #fff;
+}
+
+.badge.closed {
+    background: #333;
+    border-color: #ccc;
+    color: #fff;
+}
+
+.distance {
+    background: #fef;
+    border: 1px solid #eae;
+    border-radius: 2px;
+    color: #999;
+    font-size: 10px;
+    margin-top: 20px;
+    padding: 4px 8px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.distance b,
+.hours b {
+    color: #333;
+}
+
+.info {
+    padding-right: 60px;
+}
+
+.close {
+    background: #ccc;
+    border-radius: 30px;
+    color: #fff;
+    display: block;
+    font-size: 24px;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    right: 30px;
+    text-decoration: none;
+    text-align: center;
+    width: 30px;
+}
+
+.close:hover {
+    background: #666;
+    color: #ccc;
+}
+
+.close:active {
+    box-shadow: 0 2px 0 0 rgba(0,0,0,.2) inset, 0 12px 24px 6px rgba(0,0,0,.2) inset, 0 0 2px 2px rgba(0,0,0,.2) inset;
+    color: #999;
+}
+
+.hours {
+    color: #666;
+    font-size: 11px;
+    margin-top: 15px;
+}
+
+.hours b {
+    display: inline-block;
+}
+
+.hours b:after {
+    content: "\00a0\00a0\00b7\00a0";  /* space + • */
+    margin-left: 1px;
+    float: right;
+}
+
+tel {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14px;
+    margin: 8px 0;
+}
+
+tel a {
+    color: #5f9f9f;
+}
+
+tel a:hover {
+    color: #2f4f4f;
+}
+
+.photos {
+    position: relative;
+    z-index: 1;
+}
+
+details {
+    background: beige;
+    border-top: 2px solid #ddd;
+    border-radius: 0 0 4px 4px;
+    color: #666;
+    margin-top: -2px;
+    position: relative;
+    z-index: 2;
+}
+
+details summary {
+    border-radius: 0 0 2px 2px;
+    color: #333;
+    cursor: pointer;
+    display: block;
+    font-weight: 600;
+    margin: -15px;
+    padding: 15px;
+}
+
+details summary + * {
+    margin-top: 30px;
+}
+
+.prose p,
+.prose ol,
+.prose ul {
+    margin: 15px 0;
+}
+
+.prose ol,
+.prose ul {
+    margin: 15px 0 15px 33px;
+}
+
+.prose :last-child {
+    margin-bottom: 0;
+}
+
+.prose ol {
+    list-style: decimal;
+}
+
+.prose ul {
+    list-style: disc;
+}
+
+@media (min-width: 320px) {
+    .article .photos-,
+    .photo {
+        height: 80px;
+    }
+    .photos li {
+        width: 20%;
+    }
+    h2 {
+        font-size: 18px;
+        line-height: 20px;
+    }
+    input[type=search] {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 480px) {
+    .article .photos-,
+    .photo {
+        height: 100px;
+    }
+    .photos li {
+        width: 20%;
+    }
+    h2 {
+        font-size: 22px;
+        line-height: 24px;
+    }
+    input[type=search] {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 799px) {
+    .name,
+    .location {
+        float: none;
+    }
+    .location {
+        margin-top: 10px;
+    }
+    .distance {
+        margin-top: 10px;
+        max-width: 120px;
+    }
+}
+
+@media (min-width: 800px) {
+    .article .photos-,
+    .photo {
+        height: 150px;
+    }
+    .photos li {
+        width: 25%;
+    }
+    h2 {
+        font-size: 28px;
+        line-height: 30px;
+    }
+    input[type=search] {
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .article .photos-,
+    .photo {
+        height: 250px;
+    }
+    .photos li {
+        width: 25%;
+    }
+    input[type=search] {
+        font-size: 24px;
+    }
+}
